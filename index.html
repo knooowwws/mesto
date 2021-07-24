@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="pages/index.css">
+	<title>Проект-место</title>
+</head>
+
+<body class="page">
+
+	<header class="header page__item">
+		<a href="#"><img class="header__logo" src="./images/logo.svg" alt="Логотип"></a>
+	</header>
+
+	<main class="content">
+
+		<section class="profile page__item">
+			<img class="profile__avatar" src="./images/face.jpg" alt="Портрет Жака-Ив Кусто">
+
+			<div class="profile__info">
+				<div class="profile__content">
+					<h1 class="profile__name">Жак-Ив Кусто</h1>
+					<button class="profile__btn-edit opacity" aria-label="edit" type="button"></button>
+				</div>
+				<p class="profile__work-place">Исследователь океана</p>
+			</div>
+
+			<button class="profile__btn-add opacity" aria-label="add" type="button"></button>
+
+		</section>
+
+		<section class="elements page__item">
+			<ul class="cards">
+				<li class="cards__item">
+					<img class="cards__img" src="./images/dag.jpg" alt="Гамсутль">
+					<h2 class="cards__name">Дагестан</h2>
+					<button class="cards__btn opacity" type="button"></button>
+				</li>
+				<li class="cards__item">
+					<img class="cards__img" src="./images/astra.jpg" alt="Набережная Астрахани">
+					<h2 class="cards__name">Астрахань</h2>
+					<button class="cards__btn opacity" aria-label="like" type="button"></button>
+				</li>
+				<li class="cards__item">
+					<img class="cards__img" src="./images/adyg.jpg" alt="Адыгея">
+					<h2 class="cards__name">Адыгея</h2>
+					<button class="cards__btn opacity" aria-label="like" type="button"></button>
+				</li>
+				<li class="cards__item">
+					<img class="cards__img" src="./images/karel.jpg" alt="Карелия">
+					<h2 class="cards__name">Карелия</h2>
+					<button class="cards__btn opacity" aria-label="like" type="button"></button>
+				</li>
+				<li class="cards__item">
+					<img class="cards__img" src="./images/krym.jpg" alt="Крым">
+					<h2 class="cards__name">Крым</h2>
+					<button class="cards__btn opacity" aria-label="like" type="button"></button>
+				</li>
+				<li class="cards__item">
+					<img class="cards__img" src="./images/laz.jpg" alt="Лазаревское">
+					<h2 class="cards__name">Лазаревское</h2>
+					<button class="cards__btn opacity" aria-label="like" type="button"></button>
+				</li>
+			</ul>
+		</section>
+
+	</main>
+
+	<footer class="footer page__item">
+		<p class="footer__copyright">© 2021 Mesto Russia</p>
+	</footer>
+
+	<div class="popup">
+		<div class=" popup__container">
+			<button class="popup__close opacity" aria-label="close" type="button"></button>
+			<h2 class="popup__title">Редактировать профиль</h2>
+			<form class="form" name="popup">
+				<fieldset class="form__content">
+					<input class="form__input form__input_name" value="" type="text" name="name" placeholder="Имя">
+					<input class="form__input form__input_prof" value="" type="text" name="profession"
+						placeholder="Деятельность">
+				</fieldset>
+				<button class="popup__submit opacity" type="submit">Сохранить</button>
+			</form>
+		</div>
+	</div>
+
+<script rel="script" src="scripts/index.js"></script>
+</body>
+
+</html>
