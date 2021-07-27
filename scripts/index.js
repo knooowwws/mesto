@@ -6,6 +6,9 @@ const nameInput = document.querySelector('.form__input_name');
 const jobInput = document.querySelector('.form__input_prof');
 const profileName = document.querySelector('.profile__name').textContent;
 const profileWork = document.querySelector('.profile__work-place').textContent;
+
+const cardsList = document.querySelector('.cards');
+const cardTemplate = document.querySelector('.card').content;
 const initialCards = [
     {
         name: 'Архыз',
@@ -37,12 +40,22 @@ closeButton.addEventListener('click', openModal);
 editButton.addEventListener('click', openModal);
 saveButton.addEventListener('click', changeProfile);
 
-
 function openModal() {
     modal.classList.toggle('popup_opened')
     nameInput.value =  profileName
     jobInput.value =  profileWork;
 }
+
+function sixCards () {
+    initialCards.forEach( item => {
+        const card = cardTemplate.cloneNode(true);
+        card.querySelector('.cards__img').src = item.link;
+        card.querySelector('.cards__name').textContent = item.name;
+
+        cardsList.append(card);
+    })
+}
+sixCards();
 
 function changeProfile(evt) {
     evt.preventDefault();
