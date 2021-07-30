@@ -43,35 +43,35 @@
 		<p class="footer__copyright">© 2021 Mesto Russia</p>
 	</footer>
 
-	<div class="popup">
+	<div class="popup popup_profile">
 		<div class=" popup__container">
-			<button class="popup__close opacity" aria-label="close" type="button"></button>
+			<button class="popup__close popup__close_profile opacity" aria-label="close" type="button"></button>
 			<h2 class="popup__title">Редактировать профиль</h2>
 			<form class="form" name="popup">
 				<fieldset class="form__content">
 					<input class="form__input form__input_name" value="" type="text" name="name" placeholder="Имя">
-					<input class="form__input form__input_prof" value="" type="text" name="profession"
+					<input class="form__input form__input_profile" value="" type="text" name="profession"
 						placeholder="Деятельность">
 				</fieldset>
-				<button class="popup__submit opacity" type="submit">Сохранить</button>
+				<button class="popup__submit popup__submit_profile opacity" type="submit">Сохранить</button>
 			</form>
 		</div>
 	</div>
 
-<!--	<div class="popup">-->
-<!--		<div class=" popup__container">-->
-<!--			<button class="popup__close opacity" aria-label="close" type="button"></button>-->
-<!--			<h2 class="popup__title">Редактировать профиль</h2>-->
-<!--			<form class="form" name="popup">-->
-<!--				<fieldset class="form__content">-->
-<!--					<input class="form__input form__input_name" value="" type="text" name="name" placeholder="Имя">-->
-<!--					<input class="form__input form__input_prof" value="" type="text" name="profession"-->
-<!--						   placeholder="Деятельность">-->
-<!--				</fieldset>-->
-<!--				<button class="popup__submit opacity" type="submit">Сохранить</button>-->
-<!--			</form>-->
-<!--		</div>-->
-<!--	</div>-->
+	<div class="popup popup_mesto">
+		<div class=" popup__container">
+			<button class="popup__close popup__close_mesto opacity" aria-label="close" type="button"></button>
+			<h2 class="popup__title">Новое место</h2>
+			<form class="form" name="popup">
+				<fieldset class="form__content">
+					<input class="form__input form__input_location" value="" type="text" name="name" placeholder="Название">
+					<input class="form__input form__input_url" value="" type="text" name="profession"
+						   placeholder="Ссылка на картинку">
+				</fieldset>
+				<button class="popup__submit popup__submit_mesto opacity" type="submit">Создать</button>
+			</form>
+		</div>
+	</div>
 
 
 	<template class="card">
@@ -79,6 +79,7 @@
 			<img class="cards__img" src="" alt="">
 			<h2 class="cards__name"></h2>
 			<button class="cards__btn opacity" type="button"></button>
+			<div class="cards__trash opacity"></div>
 		</li>
 	</template>
 <script rel="script" src="scripts/index.js"></script>
