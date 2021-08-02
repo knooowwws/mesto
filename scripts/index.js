@@ -37,6 +37,7 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+const trashCard = document.querySelector('.cards__trash')
 // modalMesto
 const modalMesto = document.querySelector('.popup_mesto');
 const addButton = document.querySelector('.profile__btn-add');
@@ -45,20 +46,21 @@ const saveMestoButton = document.querySelector('.popup__submit_mesto');
 
 
 // FUNCTIONS
-closeButtonProfile.addEventListener('click', openModalProfile);
-editButton.addEventListener('click', openModalProfile);
+closeButtonProfile.addEventListener('click', openCloseModalProfile);
+editButton.addEventListener('click', openCloseModalProfile);
 saveProfileButton.addEventListener('click', changeProfile);
 
-addButton.addEventListener('click', openModalMesto);
-closeButtonMesto.addEventListener('click', openModalMesto);
+// trashCard.addEventListener('click', deleteCard);
+
+addButton.addEventListener('click', openCloseModalMesto);
+closeButtonMesto.addEventListener('click', openCloseModalMesto);
 saveMestoButton.addEventListener('click', addCard)
-saveMestoButton.addEventListener('click', openModalMesto)
+saveMestoButton.addEventListener('click', openCloseModalMesto)
 
-
-function openModalProfile() {
-    modalProfile.classList.toggle('popup_opened')
-    nameInput.value =  profileName
+function openCloseModalProfile() {
+    nameInput.value =  profileName;
     jobInput.value =  profileWork;
+    modalProfile.classList.toggle('popup_opened')
 }
 function changeProfile(evt) {
     evt.preventDefault();
@@ -67,9 +69,15 @@ function changeProfile(evt) {
 }
 
 
-function openModalMesto() {
+function openCloseModalMesto() {
     modalMesto.classList.toggle('popup_opened');
 }
+
+function openModalPhoto (i) {
+    i.classList.toggle('popup_opened');
+
+}
+
 function addCard (evt) {
     evt.preventDefault();
     let placeName = modalMesto.querySelector('.form__input_location').value;
@@ -81,6 +89,9 @@ function addCard (evt) {
     card.querySelector('.cards__btn').addEventListener('click', (evt) => {
         evt.target.classList.toggle('cards__btn_like');
         console.log(evt.target)
+    })
+    card.querySelector('.cards__trash').addEventListener('click', (evt) => {
+        evt.target.closest('.cards__item').remove();
     })
 
     cardsList.prepend(card);
@@ -96,6 +107,10 @@ function sixCards () {
         card.querySelector('.cards__btn').addEventListener('click', (evt) => {
             evt.target.classList.toggle('cards__btn_like');
             console.log(evt.target)
+        })
+
+        card.querySelector('.cards__trash').addEventListener('click', (evt) => {
+            evt.target.closest('.cards__item').remove();
         })
 
         cardsList.append(card);
